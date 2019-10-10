@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -100,26 +98,23 @@ function FiltersMenu(props) {
           <li
             title="Pin all jobs that pass the global filters"
             className="dropdown-item"
-            onClick={pinAllShownJobs}
           >
-            Pin all showing
+            <div onClick={pinAllShownJobs} role="presentation">
+              Pin all showing
+            </div>
           </li>
-          <li
-            title="Show only superseded jobs"
-            className="dropdown-item"
-            onClick={filterModel.setOnlySuperseded}
-          >
-            Superseded only
+          <li title="Show only superseded jobs" className="dropdown-item">
+            <div onClick={filterModel.setOnlySuperseded} role="presentation">
+              Superseded only
+            </div>
           </li>
           <li title={`Show only pushes for ${email}`} className="dropdown-item">
             <a href={getJobsUrl({ author: email })}>My pushes only</a>
           </li>
-          <li
-            title="Reset to default status filters"
-            className="dropdown-item"
-            onClick={filterModel.resetNonFieldFilters}
-          >
-            Reset
+          <li title="Reset to default status filters" className="dropdown-item">
+            <div onClick={filterModel.resetNonFieldFilters} role="presentation">
+              Reset
+            </div>
           </li>
         </ul>
       </span>
